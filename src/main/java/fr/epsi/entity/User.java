@@ -22,6 +22,13 @@ public class User {
 //	@Enumerated(EnumType.STRING)
 //	Collection<Roles> roles;
 	
+	public User() {}
+	
+	public User(String nickname, String password) {
+		this.nickname = nickname;
+		this.password = password;
+	}
+	
 	public Long getId() {
 		return id;
 	}

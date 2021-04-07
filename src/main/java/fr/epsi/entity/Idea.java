@@ -23,7 +23,7 @@ public class Idea {
 	private int flops;
 	
 	@ManyToMany
-	private List<Category> categories;
+	private List<Category> category;
 	
 	public Long getId() {
 		return id;
@@ -82,11 +82,11 @@ public class Idea {
 	}
 
 	public List<Category> getCategory() {
-		return categories;
+		return this.category;
 	}
 
 	public void setCategory(List<Category> cats) {
-		this.categories = cats;
+		this.category = cats;
 	}
 
 }

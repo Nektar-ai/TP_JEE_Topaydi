@@ -16,8 +16,8 @@ public class Category {
 	private Long id;
 	private String nom;
 	
-	@ManyToMany (mappedBy = "categories")
-	private List<Idea> ideas;
+	@ManyToMany (mappedBy = "category")
+	private List<Idea> idea;
 	
 	public Long getId() {
 		return id;
@@ -32,10 +32,10 @@ public class Category {
 		this.nom = nom;
 	}
 	public List<Idea> getIdeas() {
-		return ideas;
+		return this.idea;
 	}
 	public void setIdeas(List<Idea> ideas) {
-		this.ideas = ideas;
+		this.idea = ideas;
 	}
 	
 }

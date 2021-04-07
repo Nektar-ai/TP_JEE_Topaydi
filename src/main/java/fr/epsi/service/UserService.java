@@ -5,6 +5,6 @@ import fr.epsi.entity.User;
 public interface UserService {
 
 	public User getUserByName(String n);
-	public void saveUser(User u);
+	public void saveUser(User u);	
 	
 }

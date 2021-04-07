@@ -24,7 +24,7 @@
  	<%@include file="commons/menu.jsp"%>
 
            		<br><br><br><br><br><br>
-       <h2> Welcome to Topaydi </h2>
+       		  <h2> Welcome to Topaydi </h2>
            		<br><br><br><br><br><br>
 
 	<%@include file="commons/footer.jsp"%> 

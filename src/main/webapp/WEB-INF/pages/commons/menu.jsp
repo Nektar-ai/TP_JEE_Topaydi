@@ -17,8 +17,8 @@
 <body>
   <nav>  	
     <div class="nav-wrapper">
-      <a style="position: absolute; left:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="brand-logo">Topaydi</a>
-      <a style="position: absolute; right:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="brand-logo">Login</a>
+      <a style="position: absolute; left:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/home" class="brand-logo">Topaydi</a>
+      <a style="position: absolute; right:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/login" class="brand-logo">Loginn</a>
       <!-- <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
       
       

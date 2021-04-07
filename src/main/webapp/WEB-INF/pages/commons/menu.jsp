@@ -17,8 +17,11 @@
 <body>
   <nav>  	
     <div class="nav-wrapper">
-      <a style="position: absolute; left:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/home" class="brand-logo">Topaydi</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a style="position: absolute; left:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="brand-logo">Topaydi</a>
+      <a style="position: absolute; right:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="brand-logo">Login</a>
+      <!-- <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
+      
+      
 <!--       	<li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientliste">Client</a></li>
         <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitliste">Produit</a></li>
         <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/factureliste">Facture</a></li>

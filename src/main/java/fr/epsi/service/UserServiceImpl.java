@@ -14,12 +14,22 @@ public class UserServiceImpl implements UserService {
 	UserRepository dao = new UserRepositoryImpl();
 	
 	public User getUserByName(String n) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = new User();
+		user = dao.getUserByName(n);
+		return user;
 	}
 
 	public void saveUser(User u) {
-		// TODO Auto-generated method stub
-		
+		User user = new User();
+		user.setNickname(u.getNickname());
+		user.setPassword(u.getPassword());
+		dao.saveUser(user);
+	}
+	
+	public void createDummyUser(User u) {
+		User user = new User();
+		user.setNickname(u.getNickname());
+		user.setPassword(u.getPassword());
+		dao.saveUser(user);
 	}
 }

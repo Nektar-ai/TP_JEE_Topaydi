@@ -16,6 +16,7 @@ public class User {
 	private String mail;
 	private String password;
 	
+
 //	@ElementCollection(targetClass = Roles.class)
 //	@JoinTable(name = "RolesTable", joinColumns = @JoinColumn(name = "user_id"))
 //	@Column(name = "roles", nullable = false)
@@ -28,7 +29,7 @@ public class User {
 		this.nickname = nickname;
 		this.password = password;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}

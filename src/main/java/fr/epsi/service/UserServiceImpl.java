@@ -37,5 +37,5 @@ public class UserServiceImpl implements UserService {
 		user.setNickname(u.getNickname());
 		user.setPassword(u.getPassword());
 		dao.createUser(user);
-	}
+	}	
 }

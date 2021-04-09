@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,11 +31,20 @@ public class IdeasServlet extends HttpServlet {
 //    		System.out.println("YOYOYOYOYO TITRE IDEA : " + idea.getTitre());
 //    	}
     	req.setAttribute("listeIdeas", ideaz);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Ideas.jsp").forward(req, resp);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Ideas.jsp").forward(req, resp);	
     }
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-    	service.createDummyIdea();
+    	
+        String action = req.getParameter("action");
+        if("newidea".equals(action)){
+        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/NewIdea.jsp");
+        	dispatcher.forward(req, resp);
+        } else if("ideas".equals(action)) {
+        	service.createDummyIdea();
+        } else {
+            System.out.println("T'as foiré mate");
+        }
 	}
 }

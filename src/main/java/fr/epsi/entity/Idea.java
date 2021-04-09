@@ -25,6 +25,9 @@ public class Idea {
 	@ManyToMany
 	private List<Category> category;
 	
+	@ManyToMany (mappedBy = "idea")
+	private List<User> user;
+	
 	public Idea() {}
 	
 	public Idea(String titre, String description, String photo) {

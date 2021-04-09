@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
     	} else if (u.getPassword().equals(uDB.getPassword())) {
     		HttpSession userSession = req.getSession();
         	userSession.setAttribute("user", u);
-    		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/Idea.jsp");
+    		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/LoginSuccess.jsp");
         	dispatcher.forward(req, resp);
     	} else {
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/ErrorLogin.jsp");

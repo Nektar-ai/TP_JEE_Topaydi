@@ -26,16 +26,15 @@ public class IdeasServlet extends HttpServlet {
             throws ServletException, IOException
     {
     	List<Idea> ideaz = service.getAllIdeas();
-    	for (Idea idea : ideaz) {
-    		System.out.println("YOYOYOYOYO TITRE IDEA : " + idea.getTitre());
-    	}
+//    	for (Idea idea : ideaz) {
+//    		System.out.println("YOYOYOYOYO TITRE IDEA : " + idea.getTitre());
+//    	}
     	req.setAttribute("listeIdeas", ideaz);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Ideas.jsp").forward(req, resp);
     }
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-    	Idea i = new Idea();
-    	service.createDummyIdea(i);
+    	service.createDummyIdea();
 	}
 }

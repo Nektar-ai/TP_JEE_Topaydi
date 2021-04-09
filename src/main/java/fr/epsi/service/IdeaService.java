@@ -7,6 +7,6 @@ import fr.epsi.entity.Idea;
 public interface IdeaService {
 	
 	public List<Idea> getAllIdeas();
-	public void createDummyIdea(Idea i);
+	public void createDummyIdea();
 	
 }

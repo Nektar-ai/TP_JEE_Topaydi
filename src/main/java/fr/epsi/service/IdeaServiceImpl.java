@@ -3,31 +3,14 @@ package fr.epsi.service;
 import fr.epsi.entity.Idea;
 import fr.epsi.repository.IdeaRepository;
 import fr.epsi.repository.IdeaRepositoryImpl;
-import fr.epsi.repository.UserRepository;
-import fr.epsi.repository.UserRepositoryImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.ejb.TransactionManagement;
-import javax.ejb.TransactionManagementType;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.UserTransaction;
-
 
 @Stateless
-@TransactionManagement(TransactionManagementType.BEAN)
 public class IdeaServiceImpl implements IdeaService {
-
-	@PersistenceContext(unitName = "topaydiPU")
-	EntityManager em;
-	
-	@Resource
-	UserTransaction utx;
 	
 	@EJB
 	IdeaRepository dao = new IdeaRepositoryImpl();
@@ -38,12 +21,21 @@ public class IdeaServiceImpl implements IdeaService {
 		return ideaz;
 	}
 	
-	public void createDummyIdea(Idea i) {
-		Idea idea = new Idea("Idee de ouf", "Lorem Ipsum Bo Goss Deus Ex Wouayte Pantairz",
+	public void createDummyIdea() {
+		List<Idea> Ideaz = new ArrayList<Idea>();
+		
+		Idea id1 = new Idea("Idee de ouf", "Lorem Ipsum Bo Goss Deus Ex Wouayte Pantairz",
 				"https://www.leguerandais.fr/sites/default/files/styles/recette/public/recettes/2012-plancha-de-mini-poivrons-au-sel-de-guerande-le-guerandais.jpg");
-		for (int j = 0; j<11; j++) {
-			dao.createDummyIdea(idea);
+		Ideaz.add(id1);
+		Idea id2 = new Idea("Space Travel", "Time for some space shit",
+				"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pmx040119touristguidespace-01-1551108233.jpg?resize=480:*");
+		Ideaz.add(id2);
+		Idea id3 = new Idea("Drone Flight", "Let's Get Droned",
+				"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEe5s0bFg0kiHsZgI-4UPsGFzdBVDBm9ZdqKKdcknDNnZbo2VgTwXZE8HOaUr7xIYysX0&usqp=CAU");
+		Ideaz.add(id3);
+
+		for (Idea id : Ideaz) {
+			dao.createDummyIdea(id);
 		}
 	}
-	
 }

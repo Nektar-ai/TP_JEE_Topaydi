@@ -8,18 +8,18 @@
 	<title>Topaydi Ideas</title>
 		<%@include file="commons/header.jsp"%>
 		
-		<style>
-			h2 {
-				font-size: 48px;
-				border:groove 3px;
-				width: fit-content;
-				padding: 10px;
-				padding-left: 20px;
-				padding-right: 20px;
-				position: relative;
-				left: 50%;
-				transform: translateX(-50%)
-			}	
+	<style>
+		h2 {
+			font-size: 48px;
+			border:groove 3px;
+			width: fit-content;
+			padding: 10px;
+			padding-left: 20px;
+			padding-right: 20px;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%)
+		}	
 	</style>
 		
 	</head>

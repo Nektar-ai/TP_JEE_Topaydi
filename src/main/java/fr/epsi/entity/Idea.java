@@ -25,6 +25,14 @@ public class Idea {
 	@ManyToMany
 	private List<Category> category;
 	
+	public Idea() {}
+	
+	public Idea(String titre, String description, String photo) {
+		this.titre = titre;
+		this.description = description;
+		this.photo = photo;
+	}
+	
 	public Long getId() {
 		return id;
 	}

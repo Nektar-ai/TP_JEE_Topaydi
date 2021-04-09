@@ -32,17 +32,10 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
-	public void saveUser(User u) {
+	public void createUser(User u) {
 		User user = new User();
 		user.setNickname(u.getNickname());
 		user.setPassword(u.getPassword());
-		dao.saveUser(user);
-	}
-	
-	public void createDummyUser(User u) {
-		User user = new User();
-		user.setNickname(u.getNickname());
-		user.setPassword(u.getPassword());
-		dao.saveUser(user);
+		dao.createUser(user);
 	}
 }

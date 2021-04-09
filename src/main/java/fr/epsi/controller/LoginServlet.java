@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
     	User u = new User(req.getParameter("nickname"), req.getParameter("password"));
+
     	User uDB = service.getUserByName(req.getParameter("nickname"));
     	
     	System.out.println("User JSP Password : "+u.getPassword());
@@ -49,6 +50,6 @@ public class LoginServlet extends HttpServlet {
     	}
     	
 //    	service.createDummyUser(u);
-    	
+
 	}
 }

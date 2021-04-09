@@ -31,6 +31,12 @@ public class IdeaRepositoryImpl implements IdeaRepository {
 		return ideaz;
 	}
 	
+	public Idea getOneIdeaById(Long id) {
+		Idea idea = new Idea();
+		idea = (Idea) em.createQuery("SELECT i FROM Idea i WHERE id = " + id, Idea.class).getSingleResult();
+		return idea;
+	}
+	
 	public void createDummyIdea(Idea i) 
 	{		
 		try {
@@ -42,4 +48,25 @@ public class IdeaRepositoryImpl implements IdeaRepository {
 		}	
 	}
 	
+	public void topVote(Idea i) {
+		i.setTops(i.getTops()+1);
+		try {
+			utx.begin();
+			em.merge(i);
+			utx.commit();
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	public void flopVote(Idea i) {
+		i.setFlops(i.getFlops()+1);
+		try {
+			utx.begin();
+			em.merge(i);
+			utx.commit();
+		} catch (Exception e) {
+			
+		}
+	}
 }

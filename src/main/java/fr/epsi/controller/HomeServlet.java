@@ -15,11 +15,4 @@ public class HomeServlet extends HttpServlet {
     {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Home.jsp").forward(req, resp);
     }
-    
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-//            throws ServletException, IOException
-//    {
-//		String login = req.getParameter("loginuser");
-//		String pass = req.getParameter("passuser");
-//    }
 }

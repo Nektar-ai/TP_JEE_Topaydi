@@ -10,7 +10,7 @@
 <body>
  	<%@include file="commons/menu.jsp"%>
 	<br><br>
-    	<form action="saveUser" method="post">
+    	<form action="login" method="post">
     		<label for="nickname">Nom d'utilisateur : </label><input type="text" name="nickname" /><br>
     		<label for="password">Mot de passe : </label><input type="text" name="password" />
     		<input type="submit" value="Valider">

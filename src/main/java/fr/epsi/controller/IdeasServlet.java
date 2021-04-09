@@ -1,6 +1,8 @@
 package fr.epsi.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -9,24 +11,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.epsi.entity.Idea;
 import fr.epsi.entity.User;
+import fr.epsi.service.IdeaService;
 import fr.epsi.service.UserService;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
-
+@WebServlet("/ideas")
+public class IdeasServlet extends HttpServlet {
+	
 	@EJB
-	private UserService service;
+	private IdeaService service;
 	
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
     {
-		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Login.jsp").forward(req, resp);
+    	List<Idea> ideaz = service.getAllIdeas();
+    	for (Idea idea : ideaz) {
+    		System.out.println("YOYOYOYOYO TITRE IDEA : " + idea.getTitre());
+    	}
+    	req.setAttribute("listeIdeas", ideaz);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Ideas.jsp").forward(req, resp);
     }
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-    	User u = new User(req.getParameter("nickname"), req.getParameter("password"));
-    	service.createUser(u);
+    	Idea i = new Idea();
+    	service.createDummyIdea(i);
 	}
 }

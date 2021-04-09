@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.epsi.entity.Idea;
-import fr.epsi.entity.User;
 import fr.epsi.service.IdeaService;
-import fr.epsi.service.UserService;
 
 @WebServlet("/ideas")
 public class IdeasServlet extends HttpServlet {
@@ -33,16 +31,22 @@ public class IdeasServlet extends HttpServlet {
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-
-    	
-        String action = req.getParameter("action");
-        if("newidea".equals(action)){
+//        String action = req.getParameter("action");
+        if (req.getParameter("newidea") != null) {
         	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/NewIdea.jsp");
         	dispatcher.forward(req, resp);
-        } else if("ideas".equals(action)) {
-        	service.createDummyIdea();
-        } else {
-            System.out.println("T'as foiré mate");
         }
+        else if (req.getParameter("ideas") != null) {
+        	service.createDummyIdea();
+        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/Ideas.jsp");
+        	dispatcher.forward(req, resp);
+        } else {
+            System.out.println("T'as foire mate");
+        }
+//        if("newidea".equals(action)){
+//        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/NewIdea.jsp");
+//        	dispatcher.forward(req, resp);
+//        } else if("ideas".equals(action)) {
+//        	service.createDummyIdea();
 	}
 }

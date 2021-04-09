@@ -29,11 +29,11 @@
            		<br><br><br><br><br><br>
            		
            		<form method="post" action="ideas">
-           			<button type="submit">Generate dummy ideas</button>
+           			<button type="submit" name="ideas">Generate dummy ideas</button>
 				</form>
 				
-           		<form method="post" action="newidea">
-           			<button type="submit">Create new idea</button>
+           		<form method="post" action="ideas">
+           			<button type="submit" name="newidea">Create new idea</button>
 				</form>
 				
 				<table>

@@ -34,6 +34,12 @@ public class User {
 		this.nickname = nickname;
 		this.password = password;
 	}
+	
+	public User(String nickname, String mail, String password) {
+		this.nickname = nickname;
+		this.mail = mail;
+		this.password = password;
+	}
 
 	public Long getId() {
 		return id;

@@ -51,7 +51,4 @@ public class Comment {
 	public void setIdea(Idea idea) {
 		this.idea = idea;
 	}
-
-
-	
 }

@@ -23,9 +23,13 @@ public class UserRepositoryImpl implements UserRepository {
 	public User getUserByName(String n) 
 	{
 		User u = new User();		
+		try {
 		u = (User) em.createQuery("SELECT u FROM User u WHERE u.nickname = :n", User.class)
 				.setParameter("n", n)
-				.getSingleResult();		
+				.getSingleResult();
+		} catch (Exception e) {
+			return new User();
+		}
 		return u;
 	}
 
@@ -37,6 +41,6 @@ public class UserRepositoryImpl implements UserRepository {
 			utx.commit();
 		} catch (Exception e) {
 			
-		}	
+		}
 	}
 }

@@ -33,6 +33,9 @@ public class IdeaServiceImpl implements IdeaService {
 		Idea id3 = new Idea("Drone Flight", "Let's Get Droned",
 				"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEe5s0bFg0kiHsZgI-4UPsGFzdBVDBm9ZdqKKdcknDNnZbo2VgTwXZE8HOaUr7xIYysX0&usqp=CAU");
 		Ideaz.add(id3);
+		Idea id4 = new Idea("Blonde Big Boobs", "Triple B Baby",
+				"https://img-9gag-fun.9cache.com/photo/aAbGoBL_700b.jpg");
+		Ideaz.add(id4);
 
 		for (Idea id : Ideaz) {
 			dao.createDummyIdea(id);

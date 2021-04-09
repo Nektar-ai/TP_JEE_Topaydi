@@ -38,6 +38,7 @@
 						<th>Titre</th>
 						<th>Description</th>
 						<th>Image</th>
+						<th>Top/Flop</th>
 						</tr>
 					</thead>
 				<c:forEach var="Idea" items="${listeIdeas}">
@@ -46,6 +47,11 @@
 							<td>${Idea.titre}</td>
 							<td>${Idea.description}</td>
 							<td><img alt="PictureBro" src="${Idea.photo}"></td>
+							<td>${Idea.tops}<br>
+								
+									<button>Top</button><br><button>Flop</button>
+								
+							<br>${Idea.flops}</td>
 						</tr>
 					</tbody>
 				</c:forEach>

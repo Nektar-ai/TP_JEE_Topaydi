@@ -26,9 +26,6 @@ public class IdeasServlet extends HttpServlet {
             throws ServletException, IOException
     {
     	List<Idea> ideaz = service.getAllIdeas();
-//    	for (Idea idea : ideaz) {
-//    		System.out.println("YOYOYOYOYO TITRE IDEA : " + idea.getTitre());
-//    	}
     	req.setAttribute("listeIdeas", ideaz);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Ideas.jsp").forward(req, resp);
     }
@@ -36,5 +33,6 @@ public class IdeasServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
     	service.createDummyIdea();
+    	this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Ideas.jsp").forward(req, resp);
 	}
 }

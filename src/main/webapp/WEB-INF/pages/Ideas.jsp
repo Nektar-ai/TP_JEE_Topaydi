@@ -53,10 +53,12 @@
 							<td>${Idea.description}</td>
 							<td><img alt="PictureBro" src="${Idea.photo}"></td>
 							<td>${Idea.tops}<br>
-								
-							<button>Top</button><br><button>Flop</button>
-								
-							<td>${Idea.flops}</td>
+								<form method="post" action="addvote">
+									<input type="hidden" name="id" value="${Idea.id}"><br>
+									<input type="submit" name="top" value="Top" /><br>
+									<input type="submit" name="flop" value="Flop" />
+								</form>
+							<br>${Idea.flops}</td>
 						</tr>
 						</c:forEach>
 					</tbody>

@@ -41,4 +41,14 @@ public class IdeaServiceImpl implements IdeaService {
 			dao.createDummyIdea(id);
 		}
 	}
+	
+	public void topVote(Long id) {
+		Idea idea = dao.getOneIdeaById(id);
+		dao.topVote(idea);
+	}
+	
+	public void flopVote(Long id) {
+		Idea idea = dao.getOneIdeaById(id);
+		dao.flopVote(idea);
+	}
 }

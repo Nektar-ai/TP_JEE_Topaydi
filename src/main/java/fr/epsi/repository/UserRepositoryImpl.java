@@ -1,5 +1,8 @@
 package fr.epsi.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -8,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 
+import fr.epsi.entity.Idea;
 import fr.epsi.entity.User;
 
 @Stateless
@@ -42,5 +46,11 @@ public class UserRepositoryImpl implements UserRepository {
 		} catch (Exception e) {
 			
 		}
+	}
+	
+	public List<User> getNotValidatedUser() {
+		List<User> users = new ArrayList<User>();
+		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isValidated = false", User.class).getResultList();
+		return users;
 	}
 }

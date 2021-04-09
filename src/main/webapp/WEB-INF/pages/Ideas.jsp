@@ -39,26 +39,27 @@
 				<table>
 					<thead>
 						<tr>
-						<th>Titre</th>
-						<th>Description</th>
-						<th>Image</th>
-						<th>Top/Flop</th>
+							<th>Titre</th>
+							<th>Description</th>
+							<th>Image</th>
+							<th>Top/Flop</th>
 						</tr>
 					</thead>
-				<c:forEach var="Idea" items="${listeIdeas}">
+					
 					<tbody>
+						<c:forEach var="Idea" items="${listeIdeas}">
 						<tr>
 							<td>${Idea.titre}</td>
 							<td>${Idea.description}</td>
 							<td><img alt="PictureBro" src="${Idea.photo}"></td>
 							<td>${Idea.tops}<br>
 								
-									<button>Top</button><br><button>Flop</button>
+							<button>Top</button><br><button>Flop</button>
 								
-							<br>${Idea.flops}</td>
+							<td>${Idea.flops}</td>
 						</tr>
+						</c:forEach>
 					</tbody>
-				</c:forEach>
 				</table>
 				
 	<%@include file="commons/footer.jsp"%>    		

@@ -1,31 +1,38 @@
 package fr.epsi.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Idea {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id;	
 	private String titre;
 	private String description;
-	private Date date;
+	private LocalDate date = LocalDate.now();
 	private String photo;
 	private int tops;
 	private int flops;
 	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User creator;
+
 	@ManyToMany
 	private List<Category> category;
 	
-	@ManyToMany (mappedBy = "idea")
+	@ManyToMany
+	@JoinColumn(name="user_id")
 	private List<User> user;
 	
 	public Idea() {}
@@ -60,11 +67,11 @@ public class Idea {
 		this.description = description;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
@@ -99,5 +106,19 @@ public class Idea {
 	public void setCategory(List<Category> cats) {
 		this.category = cats;
 	}
+	public User getCreator() {
+		return creator;
+	}
 
+	public void setUser(User user) {
+		this.creator = user;
+	}
+
+	public List<User> getUser() {
+		return user;
+	}
+
+	public void setUser(List<User> users) {
+		this.user = users;
+	}
 }

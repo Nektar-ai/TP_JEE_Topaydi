@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -14,12 +16,17 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	private String nickname;
 	private String mail;
 	private String password;
+	private boolean isAdmin = false;
+	private boolean isValidated = false;
+
+	@OneToMany
+	@JoinColumn(name="idea_id")
+	private List<Idea> ideacreated;
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="user")
 	private List<Idea> idea;
 
 //	@ElementCollection(targetClass = Roles.class)
@@ -65,5 +72,33 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public List<Idea> getIdeacreated() {
+		return ideacreated;
+	}
+
+	public void setIdeacreated(List<Idea> ideacreated) {
+		this.ideacreated = ideacreated;
+	}
+
+	public List<Idea> getIdea() {
+		return idea;
+	}
+
+	public void setIdea(List<Idea> idea) {
+		this.idea = idea;
+	}
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+	public boolean isValidated() {
+		return isValidated;
+	}
+
+	public void setValidated(boolean validated) {
+		this.isValidated = validated;
+	}
 }

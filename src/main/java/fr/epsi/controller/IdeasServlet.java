@@ -1,7 +1,6 @@
 package fr.epsi.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -38,15 +37,9 @@ public class IdeasServlet extends HttpServlet {
         }
         else if (req.getParameter("ideas") != null) {
         	service.createDummyIdea();
-        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/Ideas.jsp");
-        	dispatcher.forward(req, resp);
+        	doGet(req, resp);
         } else {
             System.out.println("T'as foire mate");
         }
-//        if("newidea".equals(action)){
-//        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/NewIdea.jsp");
-//        	dispatcher.forward(req, resp);
-//        } else if("ideas".equals(action)) {
-//        	service.createDummyIdea();
 	}
 }

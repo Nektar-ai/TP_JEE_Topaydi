@@ -16,7 +16,7 @@
     		<input type="submit" value="Valider">
     	</form>
     	
-    	<button ><a href="register">M'inscrire</a></button>
+    	<a href="register"><button >M'inscrire</button></a>
 
 	<%@include file="commons/footer.jsp"%> 
 </body>

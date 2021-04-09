@@ -14,7 +14,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 
-
 @Stateless
 @TransactionManagement(TransactionManagementType.BEAN)
 public class IdeaRepositoryImpl implements IdeaRepository {
@@ -27,7 +26,7 @@ public class IdeaRepositoryImpl implements IdeaRepository {
 	
 	public List<Idea> getAllIdeas() {
 		List<Idea> ideaz = new ArrayList<Idea>();
-		ideaz = (List<Idea>) em.createQuery("SELECT i FROM Idea i", Idea.class).getResultList();
+		ideaz = (List<Idea>) em.createQuery("SELECT i FROM Idea i ORDER BY i.tops DESC", Idea.class).getResultList();
 		return ideaz;
 	}
 	

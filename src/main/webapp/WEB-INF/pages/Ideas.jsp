@@ -29,24 +29,25 @@
            		<br><br><br><br><br><br>
            		
            		<form method="post" action="ideas">
-           			<button type="submit">Generate dummy ideas</button>
+           			<button type="submit" name="ideas">Generate dummy ideas</button>
 				</form>
 				
-           		<form method="post" action="newidea">
-           			<button type="submit">Create new idea</button>
+           		<form method="post" action="ideas">
+           			<button type="submit" name="newidea">Create new idea</button>
 				</form>
 				
 				<table>
 					<thead>
 						<tr>
-						<th>Titre</th>
-						<th>Description</th>
-						<th>Image</th>
-						<th>Top/Flop</th>
+							<th>Titre</th>
+							<th>Description</th>
+							<th>Image</th>
+							<th>Top/Flop</th>
 						</tr>
 					</thead>
-				<c:forEach var="Idea" items="${listeIdeas}">
+					
 					<tbody>
+						<c:forEach var="Idea" items="${listeIdeas}">
 						<tr>
 							<td>${Idea.titre}</td>
 							<td>${Idea.description}</td>
@@ -59,8 +60,8 @@
 								</form>
 							<br>${Idea.flops}</td>
 						</tr>
+						</c:forEach>
 					</tbody>
-				</c:forEach>
 				</table>
 				
 	<%@include file="commons/footer.jsp"%>    		

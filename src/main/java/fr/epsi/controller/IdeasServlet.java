@@ -1,7 +1,6 @@
 package fr.epsi.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -13,9 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.epsi.entity.Idea;
-import fr.epsi.entity.User;
 import fr.epsi.service.IdeaService;
-import fr.epsi.service.UserService;
 
 @WebServlet("/ideas")
 public class IdeasServlet extends HttpServlet {
@@ -33,16 +30,16 @@ public class IdeasServlet extends HttpServlet {
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-
-    	
-        String action = req.getParameter("action");
-        if("newidea".equals(action)){
+//        String action = req.getParameter("action");
+        if (req.getParameter("newidea") != null) {
         	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/NewIdea.jsp");
         	dispatcher.forward(req, resp);
-        } else if("ideas".equals(action)) {
+        }
+        else if (req.getParameter("ideas") != null) {
         	service.createDummyIdea();
+        	doGet(req, resp);
         } else {
-            System.out.println("T'as foiré mate");
+            System.out.println("T'as foire mate");
         }
 	}
 }

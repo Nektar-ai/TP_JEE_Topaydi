@@ -26,7 +26,9 @@
 
            		<br><br><br><br><br><br>
        		  	   <h2> New Idea </h2>
-           		<br><br><br><br><br><br>	           		
+           		<br><br><br><br><br><br>
+           		
+	
 				
 	<%@include file="commons/footer.jsp"%>    		
 </body>

@@ -1,7 +1,6 @@
 package fr.epsi.controller;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -38,14 +37,10 @@ public class LoginServlet extends HttpServlet {
     	{
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/Register.jsp");
         	dispatcher.forward(req, resp);
-    	} else if (req.getParameter("password").equals(uDB.getPassword())) {
+    	} else if (req.getParameter("password").equals(uDB.getPassword()) & uDB.isValidated() == true ) {
     		HttpSession userSession = req.getSession();
         	userSession.setAttribute("user", uDB);
         	System.out.println("ID DU USER MYMAN : "+uDB.getId());
-//        	Enumeration<String> enumeration = userSession.getAttributeNames();
-//            while(enumeration.hasMoreElements()){
-//                System.out.println(enumeration.nextElement());
-//            }
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/LoginSuccess.jsp");
         	dispatcher.forward(req, resp);
     	} else {

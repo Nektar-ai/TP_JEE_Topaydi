@@ -1,5 +1,8 @@
 package fr.epsi.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -35,5 +38,11 @@ public class UserServiceImpl implements UserService {
 	public void createUser(User u) {
 		User user = new User(u.getNickname(), u.getMail(), u.getPassword());
 		dao.createUser(user);
-	}	
+	}
+	
+	public List<User> getNotValidatedUser() {
+		List<User> users = new ArrayList<User>();
+		users = dao.getNotValidatedUser();
+		return users;
+	}
 }

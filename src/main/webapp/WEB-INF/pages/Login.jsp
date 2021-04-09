@@ -15,6 +15,8 @@
     		<label for="password">Mot de passe : </label><input type="text" name="password" />
     		<input type="submit" value="Valider">
     	</form>
+    	
+    	<button ><a href="register">M'inscrire</a></button>
 
 	<%@include file="commons/footer.jsp"%> 
 </body>

@@ -52,8 +52,5 @@ public class LoginServlet extends HttpServlet {
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/ErrorLogin.jsp");
         	dispatcher.forward(req, resp);
     	}
-    	
-//    	service.createDummyUser(u);
-
 	}
 }

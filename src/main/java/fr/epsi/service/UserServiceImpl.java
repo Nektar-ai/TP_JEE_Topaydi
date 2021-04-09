@@ -33,9 +33,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public void createUser(User u) {
-		User user = new User();
-		user.setNickname(u.getNickname());
-		user.setPassword(u.getPassword());
+		User user = new User(u.getNickname(), u.getMail(), u.getPassword());
 		dao.createUser(user);
 	}	
 }

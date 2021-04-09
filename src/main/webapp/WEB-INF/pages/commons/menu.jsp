@@ -22,15 +22,13 @@
       <a style="position: absolute; right:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/login" class="brand-logo">Login</a>
 
       <!-- <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
-      
-      
 <!--       	<li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientliste">Client</a></li>
         <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitliste">Produit</a></li>
         <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/factureliste">Facture</a></li>
         <li></li> --> 
         <!-- <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientform">Creation Client</a></li>
-        <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitform">Creation Produit</a></li>   -->    
-      </ul>
+        <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitform">Creation Produit</a></li>    
+      </ul> -->
     </div>
   </nav>
 

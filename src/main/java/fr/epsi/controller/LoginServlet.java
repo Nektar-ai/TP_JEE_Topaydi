@@ -1,6 +1,7 @@
 package fr.epsi.controller;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -28,20 +29,23 @@ public class LoginServlet extends HttpServlet {
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-    	User u = new User(req.getParameter("nickname"), req.getParameter("password"));
-
+//    	User u = new User(req.getParameter("nickname"), req.getParameter("password"));
     	User uDB = service.getUserByName(req.getParameter("nickname"));
-    	
-    	System.out.println("User JSP Password : "+u.getPassword());
-    	System.out.println("User Database Password : "+uDB.getPassword());
+//    	System.out.println("User JSP Password : "+u.getPassword());
+//    	System.out.println("User Database Password : "+uDB.getPassword());
     	
     	if (uDB.getNickname() == null)
     	{
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/Register.jsp");
         	dispatcher.forward(req, resp);
-    	} else if (u.getPassword().equals(uDB.getPassword())) {
+    	} else if (req.getParameter("password").equals(uDB.getPassword())) {
     		HttpSession userSession = req.getSession();
-        	userSession.setAttribute("user", u);
+        	userSession.setAttribute("user", uDB);
+        	System.out.println("ID DU USER MYMAN : "+uDB.getId());
+//        	Enumeration<String> enumeration = userSession.getAttributeNames();
+//            while(enumeration.hasMoreElements()){
+//                System.out.println(enumeration.nextElement());
+//            }
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/LoginSuccess.jsp");
         	dispatcher.forward(req, resp);
     	} else {

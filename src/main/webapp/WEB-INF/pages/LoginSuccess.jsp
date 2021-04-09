@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="fr.epsi.entity.User"%>   
+<%-- <%@ page import="fr.epsi.entity.User"%>   --%> 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,9 +30,10 @@
 	       		  	 <h2> Ideaz Page </h2>
 	           		<br><br><br><br><br><br>
 		
-		<% User u = (User) session.getAttribute("user"); %>
+<%-- 		<% User u = (User) session.getAttribute("user"); %>
 		
-		<h2> Bienvenue <%=u.getNickname() %></h2>
+		<h2> Bienvenue <%=u.getNickname() %></h2> --%>
+		<h2> Bienvenue ${sessionScope['user'].getNickname()}</h2>
 		
 		<%@include file="commons/footer.jsp"%>    		
 	</body>

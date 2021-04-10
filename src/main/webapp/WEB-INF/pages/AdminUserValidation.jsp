@@ -68,6 +68,44 @@
 		          </tbody>
 		        </table>
 		        <div class="w-full flex mt-3 mb-2">
+		        	<h2 class="text-2xl">Deactivated Users</h2>
+		        </div>
+		        <table class="min-w-full divide-y divide-gray-200">
+		          <thead class="bg-gray-50">
+		            <tr>
+		              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+		                Nickname
+		              </th>
+		              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+		                Email
+		              </th>
+		              <th scope="col" class="relative px-6 py-3 flex float-right">
+		                <span class="sr-only">Edit</span>
+		              </th>
+		            </tr>
+		          </thead>
+		          <tbody class="bg-white divide-y divide-gray-200">
+		           
+		            
+		            <c:forEach var="UserD" items="${listDeacUsers}">
+			
+						<tr>
+							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${UserD.nickname}</td>
+							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${UserD.mail}</td>
+							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex float-right">
+								<form action="admin" method="post" class="mx-2">					
+									<input type="hidden" value="${UserD.getNickname()}" id="nickname" name="nickname"/>
+									<button type="submit" value="Activer" name="activate" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Activer</button>					
+								</form>
+								
+							</td>					
+						</tr>
+			
+					</c:forEach>
+		
+		          </tbody>
+		        </table>
+		        <div class="w-full flex mt-3 mb-2">
 		        	<h2 class="text-2xl">Validated Users</h2>
 		        </div>
 		        <table class="min-w-full divide-y divide-gray-200">

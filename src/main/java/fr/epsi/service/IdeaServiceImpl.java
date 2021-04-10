@@ -21,6 +21,12 @@ public class IdeaServiceImpl implements IdeaService {
 		return ideaz;
 	}
 	
+	public List<Idea> getBuzzIdeas() {
+		List<Idea> ideaz = new ArrayList<Idea>();
+		ideaz = dao.getBuzzIdeas();
+		return ideaz;
+	}
+	
 	public void createDummyIdea() {
 		List<Idea> Ideaz = new ArrayList<Idea>();
 		

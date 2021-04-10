@@ -11,4 +11,5 @@ public interface IdeaRepository {
 	public void createDummyIdea(Idea i);
 	public void topVote(Idea idea);
 	public void flopVote(Idea idea);
+	public List<Idea> getBuzzIdeas();
 }

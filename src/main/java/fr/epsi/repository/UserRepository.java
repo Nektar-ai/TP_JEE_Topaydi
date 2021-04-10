@@ -13,5 +13,7 @@ public interface UserRepository {
 	public List<User> getAllUsers();
 	public List<User> getNotValidatedUsers();
 	public List<User> getValidatedUsers();
+	public List<User> getBrainsIdeas();
 	public List<User> getDeactivatedUsers();
+
 }

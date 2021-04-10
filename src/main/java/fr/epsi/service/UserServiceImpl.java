@@ -40,6 +40,17 @@ public class UserServiceImpl implements UserService {
 		dao.createUser(user);
 	}
 	
+	public void updateUser(User u) {
+	
+		u.setActive(false);
+		dao.updateUser(u);
+	}
+	
+	public void deleteUser(User u)
+	{
+		dao.deleteUser(u);
+	}
+	
 	public List<User> getAllUsers() {
 		List<User> users = new ArrayList<User>();
 		users = dao.getAllUsers();
@@ -55,6 +66,12 @@ public class UserServiceImpl implements UserService {
 	public List<User> getValidatedUsers() {
 		List<User> users = new ArrayList<User>();
 		users = dao.getValidatedUsers();
+		return users;
+	}
+	
+	public List<User> getDeactivatedUsers() {
+		List<User> users = new ArrayList<User>();
+		users = dao.getDeactivatedUsers();
 		return users;
 	}
 }

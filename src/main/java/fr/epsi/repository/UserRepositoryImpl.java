@@ -44,10 +44,31 @@ public class UserRepositoryImpl implements UserRepository {
 			em.merge(u);
 			utx.commit();
 		} catch (Exception e) {
-			
+			// TODO
 		}
 	}
 	
+	public void deleteUser(User u)
+	{
+		try {
+			utx.begin();
+			em.remove(u);
+			utx.commit();
+		} catch (Exception e) {
+			// TODO
+		}
+	}
+	
+	public void updateUser(User u)
+	{		
+		try {
+			utx.begin();
+			em.merge(u);
+			utx.commit();
+		} catch (Exception e) {
+			// TODO
+		}
+	}
 	public List<User> getAllUsers()
 	{
 		List<User> users = new ArrayList<User>();
@@ -58,13 +79,19 @@ public class UserRepositoryImpl implements UserRepository {
 	public List<User> getValidatedUsers()
 	{
 		List<User> users = new ArrayList<User>();
-		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isValidated = true", User.class).getResultList();
+		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isValidated = 1 AND u.isAdmin = false", User.class).getResultList();
 		return users;
 	}
 	
 	public List<User> getNotValidatedUsers() {
 		List<User> users = new ArrayList<User>();
 		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isValidated = false", User.class).getResultList();
+		return users;
+	}
+	
+	public List<User> getDeactivatedUsers() {
+		List<User> users = new ArrayList<User>();
+		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isActive = false", User.class).getResultList();
 		return users;
 	}
 }

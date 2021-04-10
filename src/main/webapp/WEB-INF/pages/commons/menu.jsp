@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,8 +62,9 @@
             <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ideas</a>
 
             <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
-            
-            <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/admin" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a>
+            <c:if test="${sessionScope['user'].isAdmin()}">
+            	<a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/admin" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a>
+            </c:if>
           </div>
         </div>
       </div>

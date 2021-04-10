@@ -95,7 +95,7 @@
 							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex float-right">
 								<form action="admin" method="post" class="mx-2">					
 									<input type="hidden" value="${UserD.getNickname()}" id="nickname" name="nickname"/>
-									<button type="submit" value="Activer" name="activate" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Activer</button>					
+									<button type="submit" value="activate" name="activate" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Activer</button>					
 								</form>
 								
 							</td>					

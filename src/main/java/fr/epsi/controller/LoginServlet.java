@@ -40,8 +40,9 @@ public class LoginServlet extends HttpServlet {
     		if (uDB.isAdmin() == true)
     		{
     			resp.sendRedirect(req.getContextPath() + "/admin");
+    		} else {
+    			resp.sendRedirect(req.getContextPath() + "/home");
     		}
-    		resp.sendRedirect(req.getContextPath() + "/home");
     	} else {
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/ErrorLogin.jsp");
         	dispatcher.forward(req, resp);

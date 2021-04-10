@@ -39,7 +39,10 @@ public class HomeServlet extends HttpServlet {
     	{
     		top3.add(tops.get(i));
     		buzz3.add(buzz.get(i));
-    		brains3.add(brains.get(i));
+    		if (i < brains.size())
+    		{
+    			brains3.add(brains.get(i));
+    		}	
     	}    	
     	for (User u : brains3)
 		{

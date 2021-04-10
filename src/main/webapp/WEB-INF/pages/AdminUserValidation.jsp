@@ -120,7 +120,7 @@
 								</form>
 								<form action="admin" method="POST" class="mx-2">					
 									<label for="nickname"></label>
-									<input type="hidden" value="${UserV.nickname}" name="nickname"/>
+									<input type="hidden" value="${UserV.getNickname()}" id="nickname" name="nickname"/>
 									<button type="submit" value="Supprimer" name="delete" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Supprimer</button>					
 								</form>
 							</td>					

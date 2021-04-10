@@ -35,25 +35,22 @@ public class AdminServlet extends HttpServlet{
         if (req.getParameter("validate") != null) {
         	User u = service.getUserByName((String)req.getParameter("nickname"));
         	u.setValidated(true);
-        	service.createUser(u);
-        	doGet(req, resp);
+        	service.updateUser(u);        	
         } else if (req.getParameter("deactivate") != null) {
         	User u = service.getUserByName((String)req.getParameter("nickname"));
         	u.setActive(false);
-        	service.updateUser(u);
-        	doGet(req, resp);
+        	service.updateUser(u);        	
         } else if (req.getParameter("delete") != null) {
         	User u = service.getUserByName((String)req.getParameter("nickname"));
-        	service.deleteUser(u);
-            doGet(req, resp);    
+        	service.deleteUser(u);                
         } else if (req.getParameter("activate") != null) {
         	User u = service.getUserByName((String)req.getParameter("nickname"));
         	u.setActive(true);
-        	service.updateUser(u);
-            doGet(req, resp); 
+        	service.updateUser(u);             
         } else {        	
             System.out.println("Error..");
+            this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Login.jsp").forward(req, resp);
         }
-    	this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Login.jsp").forward(req, resp);
+        doGet(req, resp);    	
 	}
 }

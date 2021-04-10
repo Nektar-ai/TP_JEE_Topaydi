@@ -61,9 +61,10 @@ public class UserRepositoryImpl implements UserRepository {
 	
 	public void deleteUser(User u)
 	{
-		try {
+		try {			
 			utx.begin();
-			em.remove(u);
+			User u2 = getUserByName(u.getNickname());
+			em.remove(u2);		
 			utx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -90,9 +91,7 @@ public class UserRepositoryImpl implements UserRepository {
 	public List<User> getValidatedUsers()
 	{
 		List<User> users = new ArrayList<User>();
-
 		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isValidated = 1 AND u.isAdmin = false AND u.isActive = 1", User.class).getResultList();
-
 		return users;
 	}
 	

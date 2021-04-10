@@ -81,7 +81,10 @@
 										    <span class="font-bold">${Idea.flops}</span>
 										    
 										  </button>
+										  
+										  
 										</span>
+										
 									</form>
 							 		
 							 		

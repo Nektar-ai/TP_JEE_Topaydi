@@ -14,22 +14,7 @@
 </style>
 </head>
 <body>
-  <!-- <nav>  	
-    <div class="nav-wrapper">
-      <a style="position: absolute; left:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/home" class="brand-logo">Topaydi</a>
-      <a style="position: absolute; right:9%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="brand-logo">Ideas</a>
-      <a style="position: absolute; right:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/login" class="brand-logo">Login</a>
-
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      	<li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientliste">Client</a></li>
-        <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitliste">Produit</a></li>
-        <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/factureliste">Facture</a></li>
-        <li></li> 
-        <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientform">Creation Client</a></li>
-        <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitform">Creation Produit</a></li>    
-      </ul>
-    </div>
-  </nav> -->
+  
   
   
   <nav class="bg-gray-800">
@@ -62,9 +47,11 @@
             <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ideas</a>
 
             <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+
             <c:if test="${sessionScope['user'].isAdmin()}">
             	<a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/admin" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a>
             </c:if>
+
           </div>
         </div>
       </div>
@@ -81,7 +68,14 @@
       <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Ideas</a>
 
       <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
-      <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/Admin" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Admin</a>
+      
+      <c:choose>
+	    <c:when test="${sessionScope['user'] != null}">
+	         <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/admin" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Admin</a>
+	    </c:when>
+	    <c:otherwise>
+	    </c:otherwise>
+		</c:choose>
     </div>
   </div>
 </nav>

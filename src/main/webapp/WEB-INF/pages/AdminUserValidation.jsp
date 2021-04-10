@@ -25,10 +25,10 @@
 	<div class="w-full bg-gray-50 flex flex-col min-h-full">
 		
 		
-		<div class="flex w-full justify-center">
+		<div class="flex w-full justify-center py-5">
 		  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 lg:w-1/2 md:w-2/3 sm:w-4/5">
 		    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-		      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+		      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg mt-3 py-5">
 		      	<div class="w-full flex mt-3 mb-2">
 		        	<h2 class="text-2xl">Unvalidated Users</h2>
 		        </div>

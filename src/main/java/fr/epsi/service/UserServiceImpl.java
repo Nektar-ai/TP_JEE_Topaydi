@@ -41,8 +41,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	public void updateUser(User u) {
-	
-		u.setActive(false);
+		
 		dao.updateUser(u);
 	}
 	

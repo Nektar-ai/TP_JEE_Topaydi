@@ -40,7 +40,8 @@ public class AdminServlet extends HttpServlet{
         	service.createUser(u);
         	doGet(req, resp);
         } else if (req.getParameter("deactivate") != null) {
-        	User u = service.getUserByName((String)req.getParameter("nickname"));   
+        	User u = service.getUserByName((String)req.getParameter("nickname"));
+        	u.setActive(false);
 //        	System.out.println("USER JSP : "+req.getParameter("nickname"));
 //        	System.out.println("USER CREATED CONTROLLER : "+u.getNickname());
         	service.updateUser(u);
@@ -48,7 +49,12 @@ public class AdminServlet extends HttpServlet{
         } else if (req.getParameter("delete") != null) {
         	User u = service.getUserByName((String)req.getParameter("nickname"));
         	service.deleteUser(u);
-            doGet(req, resp);        
+            doGet(req, resp);    
+        } else if (req.getParameter("activate") != null) {
+        	User u = service.getUserByName((String)req.getParameter("nickname"));
+        	u.setActive(true);
+        	service.updateUser(u);
+            doGet(req, resp); 
         } else {        	
             System.out.println("T'as foire mate");
         }

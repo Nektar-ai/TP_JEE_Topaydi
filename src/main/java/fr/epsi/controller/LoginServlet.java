@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import fr.epsi.entity.User;
 import fr.epsi.service.UserService;
 
-@WebServlet("/login")
+@WebServlet("/")
 public class LoginServlet extends HttpServlet {
 
 	@EJB
@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
     			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/AdminUserValidation.jsp");
             	dispatcher.forward(req, resp);
     		}
-        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/LoginSuccess.jsp");
+        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/Home.jsp");
         	dispatcher.forward(req, resp);
     	} else {
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/ErrorLogin.jsp");

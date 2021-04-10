@@ -10,6 +10,10 @@
 <body>
  	<%@include file="commons/menu.jsp"%>
 	
+           		<br><br><br><br><br><br>
+       		  <h2> Welcome to Topaydi </h2>
+           		<br><br><br><br><br><br>
+	
 	<div class="w-full flex justify-center bg-gray-50">
 		<div class="lg:w-1/2 md:w-1/2 sm:w-2/3  rounded-lg">
 			<!-- <form action="login" method="post">

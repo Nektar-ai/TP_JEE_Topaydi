@@ -15,7 +15,7 @@ import fr.epsi.entity.Idea;
 import fr.epsi.entity.User;
 import fr.epsi.service.IdeaService;
 
-@WebServlet("/")
+@WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 	
 	@EJB

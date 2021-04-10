@@ -40,8 +40,12 @@ public class LoginServlet extends HttpServlet {
     	} else if (req.getParameter("password").equals(uDB.getPassword()) & uDB.isValidated() == true ) {
     		HttpSession userSession = req.getSession();
         	userSession.setAttribute("user", uDB);
-        	System.out.println("ID DU USER MYMAN : "+uDB.getId());
-    		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/LoginSuccess.jsp");
+    		if (uDB.isAdmin() == true)
+    		{
+    			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/AdminUserValidation.jsp");
+            	dispatcher.forward(req, resp);
+    		}
+        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/LoginSuccess.jsp");
         	dispatcher.forward(req, resp);
     	} else {
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/ErrorLogin.jsp");

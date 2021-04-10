@@ -24,8 +24,13 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
     {
-    	List<Idea> tops = service.getAllIdeas();		
-		req.setAttribute("listTops", tops);
+    	List<Idea> tops = service.getAllIdeas();
+    	List<Idea> top3 = new ArrayList<Idea>();
+    	for (int i = 0; i < 3 ; i++)
+    	{
+    		top3.add(tops.get(i));
+    	}
+		req.setAttribute("listTops", top3);
 		
 		List<User> brains = new ArrayList<User>();
 		req.setAttribute("listBrains", brains);

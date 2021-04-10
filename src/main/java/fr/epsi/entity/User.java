@@ -21,6 +21,7 @@ public class User {
 	private String password;
 	private boolean isAdmin = false;
 	private boolean isValidated = false;
+	private boolean isActive = true;
 
 	@OneToMany
 	@JoinColumn(name="idea_id")
@@ -100,5 +101,13 @@ public class User {
 
 	public void setValidated(boolean validated) {
 		this.isValidated = validated;
+	}
+	
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 }

@@ -39,5 +39,4 @@ public class AdminServlet extends HttpServlet{
     	service.createUser(u);
     	this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Login.jsp").forward(req, resp);
 	}
-	
 }

@@ -25,15 +25,15 @@ public class Idea {
 	private int flops;
 	
 	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User creator;
+	@JoinColumn(name="user")
+	private User user;
 
 	@ManyToMany
 	private List<Category> category;
 	
 	@ManyToMany
 	@JoinColumn(name="user_id")
-	private List<User> user;
+	private List<User> users;
 	
 	public Idea() {}
 	
@@ -107,18 +107,18 @@ public class Idea {
 		this.category = cats;
 	}
 	public User getCreator() {
-		return creator;
-	}
-
-	public void setUser(User user) {
-		this.creator = user;
-	}
-
-	public List<User> getUser() {
 		return user;
 	}
 
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public List<User> getUser() {
+		return users;
+	}
+
 	public void setUser(List<User> users) {
-		this.user = users;
+		this.users = users;
 	}
 }

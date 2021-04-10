@@ -27,7 +27,7 @@ public class User {
 	@JoinColumn
 	private List<Idea> ideacreated;
 	
-	@ManyToMany(mappedBy="user")
+	@ManyToMany(mappedBy="users")
 	private List<Idea> idea;
 
 //	@ElementCollection(targetClass = Roles.class)

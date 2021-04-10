@@ -37,12 +37,18 @@ public class UserRepositoryImpl implements UserRepository {
 		return u;
 	}
 	
+//	public List<User> getBrainsIdeas() {
+//		List<User> userz = new ArrayList<User>();
+//		userz = (List<User>) em.createQuery("SELECT count(u) FROM User u ORDER BY  DESC", User.class).getResultList();
+//		return userz;
+//	}
+
 	public List<User> getBrainsIdeas() {
 		List<User> userz = new ArrayList<User>();
-		userz = (List<User>) em.createQuery("SELECT count(u) FROM User u ORDER BY  DESC", User.class).getResultList();
+		userz = (List<User>) em.createQuery("SELECT u FROM User u LEFT JOIN Idea i ON u.id = i.user GROUP BY u.id ORDER BY COUNT(i.user) DESC", User.class).getResultList();
 		return userz;
 	}
-
+	
 	public void createUser(User u) 
 	{		
 		try {

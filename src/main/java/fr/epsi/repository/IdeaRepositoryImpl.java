@@ -50,6 +50,17 @@ public class IdeaRepositoryImpl implements IdeaRepository {
 		}	
 	}
 	
+	public void createIdea(Idea i)
+	{
+		try {
+			utx.begin();
+			em.merge(i);
+			utx.commit();
+		} catch (Exception e) {
+			
+		}
+	}
+	
 	public void topVote(Idea i) {
 		i.setTops(i.getTops()+1);
 		try {

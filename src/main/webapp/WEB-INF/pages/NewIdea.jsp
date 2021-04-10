@@ -31,17 +31,18 @@
            		
            		<div class= "w-full flex justify-center">
            			<div class="lg:w-1/2 md:w-2/3 sm:w-4/5 bg-gray-50 rounded-lg shadow-md p-3">
-           				<form class="space-y-8 divide-y divide-gray-200">
+           				<form action="newidea" class="space-y-8 divide-y divide-gray-200" method="POST">
 					  		<div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
 							    <div>
 							      	<div class="mt-6 sm:mt-5 space-y-6 sm:space-y-5">							      	
+								        
 								        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
 							          		<label for="username" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
 								            	Titre
-								          	</label>
+								          	</label>								          	
 								          	<div class="mt-1 sm:mt-0 sm:col-span-2">
 									            <div class="max-w-lg flex rounded-md shadow-sm">
-									              	<input type="text" name="titre" class="border-gray-300 border-2 rounded-sm flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300">
+									              	<input type="text" name="titre" value="titre" class="border-gray-300 border-2 rounded-sm flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300">
 									            </div>
 								          	</div>
 							        	</div>					
@@ -50,7 +51,7 @@
 								           		Description
 								          	</label>
 								          	<div class="mt-1 sm:mt-0 sm:col-span-2">
-								            	<textarea name="description" rows="6" class="border-gray-300 border-2 rounded-sm max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"></textarea>
+								            	<textarea name="description" value="description" rows="6" class="border-gray-300 border-2 rounded-sm max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"></textarea>
 								            	<p class="mt-2 text-sm text-gray-500">Décrivez votre idée</p>
 								          	</div>
 								        </div>					
@@ -60,10 +61,10 @@
 								          	</label>
 							          		<div class="mt-1 sm:mt-0 sm:col-span-2">
 							            		<div class="max-w-lg flex rounded-md shadow-sm">
-							              			<input type="text" name="photo" class="border-gray-300 border-2 rounded-sm  flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300">
-							            		</div>
-							          		</div>
-							        	</div>					        
+							              			<input type="text" name="photo" value="photo" class="border-gray-300 border-2 rounded-sm  flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300">
+							            		</div>							          		
+							          		</div>							          		
+							        	</div>							       						        
 					      			</div>
 					    		</div>			
 					  		</div>					

@@ -8,6 +8,7 @@ public interface IdeaService {
 	
 	public List<Idea> getAllIdeas();
 	public void createDummyIdea();
+	public void createIdea(Idea i);
 	public void topVote(Long id);
 	public void flopVote(Long id);
 	public List<Idea> getBuzzIdeas();

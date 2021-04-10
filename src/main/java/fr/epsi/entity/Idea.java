@@ -43,6 +43,13 @@ public class Idea {
 		this.photo = photo;
 	}
 	
+	public Idea(String titre, String description, String photo, User user) {
+		this.titre = titre;
+		this.description = description;
+		this.photo = photo;
+		this.user = user;
+	}
+	
 	public Long getId() {
 		return id;
 	}

@@ -48,6 +48,11 @@ public class IdeaServiceImpl implements IdeaService {
 		}
 	}
 	
+	public void createIdea(Idea i)
+	{
+		dao.createIdea(i);
+	}
+	
 	public void topVote(Long id) {
 		Idea idea = dao.getOneIdeaById(id);
 		dao.topVote(idea);

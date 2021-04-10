@@ -10,4 +10,5 @@ public interface IdeaService {
 	public void createDummyIdea();
 	public void topVote(Long id);
 	public void flopVote(Long id);
+	public List<Idea> getBuzzIdeas();
 }

@@ -30,6 +30,12 @@ public class IdeaRepositoryImpl implements IdeaRepository {
 		return ideaz;
 	}
 	
+	public List<Idea> getBuzzIdeas() {
+		List<Idea> ideaz = new ArrayList<Idea>();
+		ideaz = (List<Idea>) em.createQuery("SELECT i, SUM(i.tops+i.flops) AS buzz FROM Idea i ORDER BY buzz DESC", Idea.class).getResultList();
+		return ideaz;
+	}
+	
 	public Idea getOneIdeaById(Long id) {
 		Idea idea = new Idea();
 		idea = (Idea) em.createQuery("SELECT i FROM Idea i WHERE id = " + id, Idea.class).getSingleResult();

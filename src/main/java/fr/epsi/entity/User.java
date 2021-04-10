@@ -24,7 +24,7 @@ public class User {
 	private boolean isActive = true;
 
 	@OneToMany
-	@JoinColumn(name="idea_id")
+	@JoinColumn
 	private List<Idea> ideacreated;
 	
 	@ManyToMany(mappedBy="user")

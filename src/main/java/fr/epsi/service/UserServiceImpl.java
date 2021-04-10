@@ -34,6 +34,12 @@ public class UserServiceImpl implements UserService {
 		user = dao.getUserByName(n);
 		return user;
 	}
+	
+	public List<User> getBrainsIdeas() {
+		List<User> userz = new ArrayList<User>();
+		userz = dao.getBrainsIdeas();
+		return userz;
+	}
 
 	public void createUser(User u) {
 		User user = new User(u.getNickname(), u.getMail(), u.getPassword());

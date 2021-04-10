@@ -7,17 +7,6 @@
 		<title>Welcome to Topaydi !</title>
 		    <%@include file="commons/header.jsp"%>
 		<style>
-			h2 {
-				font-size: 48px;
-				border:groove 3px;
-				width: fit-content;
-				padding: 10px;
-				padding-left: 20px;
-				padding-right: 20px;
-				position: relative;
-				left: 50%;
-				transform: translateX(-50%)
-			}	
 			.bloctitle1{
 				text-orientation: mixed;
 			    transform: rotate(180deg);
@@ -36,9 +25,9 @@
 	<body>
 	 	<%@include file="commons/menu.jsp"%>
 	
-           		<br><br><br><br><br><br>
-       		  <h2> Welcome to Topaydi </h2>
-           		<br><br><br><br><br><br>
+           		<div class="w-full text-center flex justify-center p-5 my-2">
+           			<h1 class="text-4xl" >Welcome to Topaydi</h1>
+           		</div>
 	
 		<%@include file="commons/footer.jsp"%> 
 		

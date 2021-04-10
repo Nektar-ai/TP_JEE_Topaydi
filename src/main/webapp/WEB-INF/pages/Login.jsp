@@ -10,20 +10,11 @@
 <body>
  	<%@include file="commons/menu.jsp"%>
 	
-           		<br><br><br><br><br><br>
-       		  <h2> Welcome to Topaydi </h2>
-           		<br><br><br><br><br><br>
+          
 	
 	<div class="w-full flex justify-center bg-gray-50">
 		<div class="lg:w-1/2 md:w-1/2 sm:w-2/3  rounded-lg">
-			<!-- <form action="login" method="post">
-	    		<label for="nickname">Nom d'utilisateur : </label><input type="text" name="nickname" /><br>
-	    		<label for="password">Mot de passe : </label><input type="text" name="password" />
-	    		<input type="submit" value="Valider">
-	    	</form>
-	    	
-	    	<a href="register"><button >M'inscrire</button></a> -->
-	    	
+			
 	    	<div class="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
 			  <div class="sm:mx-auto sm:w-full sm:max-w-md">
 			    <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">

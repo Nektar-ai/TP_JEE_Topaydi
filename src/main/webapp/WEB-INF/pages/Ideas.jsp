@@ -61,25 +61,30 @@
 							 	</div>
 						 		
 						 		<div class="flex w-full justify-center">
+						 		
+						 			<form method="post" action="addvote">
+										<input type="hidden" name="id" value="${Idea.id}">
+										<span class="relative z-0 inline-flex shadow-sm rounded-md">
+										  <button type="submit" name="top" value="top" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+										    
+									     	<span class="font-bold">${Idea.tops}</span>
+										    <span class="sr-only">Top</span>
+										    <span>&nbsp;Top</span>
+										   
+										    
+										  </button>
+										  <button type="submit" name="flop" value="flop" class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+										    
+										    
+										    <span class="sr-only">Flop</span>
+										    <span>Flop&nbsp;</span>
+										    <span class="font-bold">${Idea.flops}</span>
+										    
+										  </button>
+										</span>
+									</form>
 							 		
-							 		<span class="relative z-0 inline-flex shadow-sm rounded-md">
-									  <button type="button" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
-									    
-								     	<span class="font-bold">${Idea.tops}</span>
-									    <span class="sr-only">Top</span>
-									    <span>&nbsp;Top</span>
-									   
-									    
-									  </button>
-									  <button type="button" class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
-									    
-									    
-									    <span class="sr-only">Flop</span>
-									    <span>Flop&nbsp;</span>
-									    <span class="font-bold">${Idea.flops}</span>
-									    
-									  </button>
-									</span>
+							 		
 						 		</div>
 						 	</div>
 						 </section>

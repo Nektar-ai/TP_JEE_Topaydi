@@ -79,7 +79,7 @@
 
       <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Ideas</a>
 
-      <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+      <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
       <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/Admin" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Admin</a>
     </div>
   </div>

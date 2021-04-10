@@ -8,7 +8,7 @@
 <title>Topaydi Ideas</title>
 	<%@include file="commons/header.jsp"%>
 	<style>
-		h2 {
+		.title {
 		font-size: 48px;
 		border:groove 3px;
 		width: fit-content;
@@ -18,51 +18,73 @@
 		position: relative;
 		left: 50%;
 		transform: translateX(-50%)
+		
+	}
+	body{
+		padding-bottom: 2em;
 	}
 	</style>
+	
 </head>
 <body>
  	<%@include file="commons/menu.jsp"%>
 
            		<br><br><br><br><br><br>
-       		  	 <h2> Ideas Page </h2>
+       		  	 <h2 class="title"> Ideas Page </h2>
            		<br><br><br><br><br><br>
            		
-           		<form method="post" action="ideas">
-           			<button type="submit" name="ideas">Generate dummy ideas</button>
-				</form>
+           		
 				
-           		<form method="post" action="ideas">
-           			<button type="submit" name="newidea">Create new idea</button>
-				</form>
+				<div class="w-full flex justify-center">
+					<div class="w-1/4 flex justify-between my-5">
+						<form method="post" action="ideas" class="w-1/3" >
+		           			<button type="submit" name="ideas" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Generate dummy ideas</button>
+						</form>
+						
+		           		<form method="post" action="ideas" class="w-1/3 ">
+		           			<button type="submit" name="newidea" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create new idea</button>
+						</form>
+					</div>
+				</div>
 				
-				<table>
-					<thead>
-						<tr>
-							<th>Titre</th>
-							<th>Description</th>
-							<th>Image</th>
-							<th>Top/Flop</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<c:forEach var="Idea" items="${listeIdeas}">
-						<tr>
-							<td>${Idea.titre}</td>
-							<td>${Idea.description}</td>
-							<td><img alt="PictureBro" src="${Idea.photo}"></td>
-							<td>${Idea.tops}<br>
-								<form method="post" action="addvote">
-									<input type="hidden" name="id" value="${Idea.id}"><br>
-									<input type="submit" name="top" value="Top" /><br>
-									<input type="submit" name="flop" value="Flop" />
-								</form>
-							<br>${Idea.flops}</td>
-						</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+				<div class="w-full px-3 flex flex-wrap justify-around">
+					 <c:forEach var="Idea" items="${listeIdeas}">
+						 <section class="lg:w-1/4 md:w-1/2 flex justify-center">
+						 	<div class="w-full bg-gray-100 rounded-lg flex flex-col p-3 justify-between ">
+							 	<div class=w-full>
+								 	<img class="w-full mb-3" alt="PictureBro" src="${Idea.photo}">
+							 		
+							 		<div class="flex flex-col w-full mb-3">
+							 			<h5 class="text-center w-full">${Idea.titre}</h2>
+							 			<p class="text-justify px-2 w-full">${Idea.description}</p>
+							 		</div>
+							 	</div>
+						 		
+						 		<div class="flex w-full justify-center">
+							 		
+							 		<span class="relative z-0 inline-flex shadow-sm rounded-md">
+									  <button type="button" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+									    
+								     	<span class="font-bold">${Idea.tops}</span>
+									    <span class="sr-only">Top</span>
+									    <span>&nbsp;Top</span>
+									   
+									    
+									  </button>
+									  <button type="button" class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+									    
+									    
+									    <span class="sr-only">Flop</span>
+									    <span>Flop&nbsp;</span>
+									    <span class="font-bold">${Idea.flops}</span>
+									    
+									  </button>
+									</span>
+						 		</div>
+						 	</div>
+						 </section>
+					 </c:forEach>
+				</div>
 				
 	<%@include file="commons/footer.jsp"%>    		
 </body>

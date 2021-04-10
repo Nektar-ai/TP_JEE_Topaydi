@@ -6,7 +6,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Menu Topaydi</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <style>
 	ul {
 		position: absolute;
@@ -15,22 +14,76 @@
 </style>
 </head>
 <body>
-  <nav>  	
+  <!-- <nav>  	
     <div class="nav-wrapper">
       <a style="position: absolute; left:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/home" class="brand-logo">Topaydi</a>
       <a style="position: absolute; right:9%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="brand-logo">Ideas</a>
       <a style="position: absolute; right:3%" href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/login" class="brand-logo">Login</a>
 
-      <!-- <ul id="nav-mobile" class="right hide-on-med-and-down"> -->
-<!--       	<li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientliste">Client</a></li>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientliste">Client</a></li>
         <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitliste">Produit</a></li>
         <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/factureliste">Facture</a></li>
-        <li></li> --> 
-        <!-- <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientform">Creation Client</a></li>
+        <li></li> 
+        <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/clientform">Creation Client</a></li>
         <li><a href="/TP_PRODUIT_EJB-0.0.1-SNAPSHOT/produitform">Creation Produit</a></li>    
-      </ul> -->
+      </ul>
     </div>
-  </nav>
+  </nav> -->
+  
+  
+  <nav class="bg-gray-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+         
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+          <h1 class="text-white font-bold text-4xl">Topaydi</h1>
+        </div>
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/home" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Topaydi</a>
+
+            <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ideas</a>
+
+            <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+            
+            <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/admin" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/home" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Topaydi</a>
+
+      <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/ideas" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Ideas</a>
+
+      <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+      <a href="/TP_JEE_Topaydi-0.0.1-SNAPSHOT/Admin" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Admin</a>
+    </div>
+  </div>
+</nav>
 
 </body>
 </html>

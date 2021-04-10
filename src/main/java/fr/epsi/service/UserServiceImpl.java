@@ -40,9 +40,21 @@ public class UserServiceImpl implements UserService {
 		dao.createUser(user);
 	}
 	
-	public List<User> getNotValidatedUser() {
+	public List<User> getAllUsers() {
 		List<User> users = new ArrayList<User>();
-		users = dao.getNotValidatedUser();
+		users = dao.getAllUsers();
+		return users;
+	}
+	
+	public List<User> getNotValidatedUsers() {
+		List<User> users = new ArrayList<User>();
+		users = dao.getNotValidatedUsers();
+		return users;
+	}
+	
+	public List<User> getValidatedUsers() {
+		List<User> users = new ArrayList<User>();
+		users = dao.getValidatedUsers();
 		return users;
 	}
 }

@@ -48,7 +48,21 @@ public class UserRepositoryImpl implements UserRepository {
 		}
 	}
 	
-	public List<User> getNotValidatedUser() {
+	public List<User> getAllUsers()
+	{
+		List<User> users = new ArrayList<User>();
+		users = (List<User>) em.createQuery("SELECT u FROM User u", User.class).getResultList();
+		return users;
+	}
+	
+	public List<User> getValidatedUsers()
+	{
+		List<User> users = new ArrayList<User>();
+		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isValidated = true", User.class).getResultList();
+		return users;
+	}
+	
+	public List<User> getNotValidatedUsers() {
 		List<User> users = new ArrayList<User>();
 		users = (List<User>) em.createQuery("SELECT u FROM User u WHERE u.isValidated = false", User.class).getResultList();
 		return users;

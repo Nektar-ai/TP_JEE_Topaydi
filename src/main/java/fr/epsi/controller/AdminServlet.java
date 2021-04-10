@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import fr.epsi.entity.User;
 import fr.epsi.service.UserService;
 
-@WebServlet("/uservalidation")
-public class UserValidationServlet extends HttpServlet{
+@WebServlet("/admin")
+public class AdminServlet extends HttpServlet{
 
 	@EJB
 	private UserService service;
@@ -22,12 +22,14 @@ public class UserValidationServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
     {
-    	List<User> users = service.getNotValidatedUser();
-    	for (User u : users)
-    	{
-    		System.out.println("USER : "+u.getNickname());
-    	}
+    	List<User> users = service.getNotValidatedUsers();
+//    	for (User u : users)
+//    	{
+//    		System.out.println("USER : "+u.getNickname());
+//    	}
+    	List<User> usersVal = service.getValidatedUsers();
     	req.setAttribute("listUsers", users);
+    	req.setAttribute("listValUsers", usersVal);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/pages/AdminUserValidation.jsp").forward(req, resp);	
     }
     

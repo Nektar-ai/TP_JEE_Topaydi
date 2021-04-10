@@ -8,5 +8,7 @@ public interface UserRepository {
 
 	public User getUserByName(String n);
 	public void createUser(User u);
-	public List<User> getNotValidatedUser();
+	public List<User> getAllUsers();
+	public List<User> getNotValidatedUsers();
+	public List<User> getValidatedUsers();
 }

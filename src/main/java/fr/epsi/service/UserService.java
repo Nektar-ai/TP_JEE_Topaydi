@@ -7,7 +7,9 @@ import fr.epsi.entity.User;
 public interface UserService {
 
 	public User getUserByName(String n);
-	public List<User> getNotValidatedUser();
+	public List<User> getAllUsers();
+	public List<User> getValidatedUsers();
+	public List<User> getNotValidatedUsers();
 	public void createUser(User u);
 	
 }

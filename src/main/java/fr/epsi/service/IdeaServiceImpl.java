@@ -30,7 +30,7 @@ public class IdeaServiceImpl implements IdeaService {
 	public void createDummyIdea() {
 		List<Idea> Ideaz = new ArrayList<Idea>();
 		
-		Idea id1 = new Idea("Idee de ouf", "Lorem Ipsum Bo Goss Deus Ex Wouayte Pantairz",
+		Idea id1 = new Idea("Idee épicée", "Lorem Ipsum etc..",
 				"https://www.leguerandais.fr/sites/default/files/styles/recette/public/recettes/2012-plancha-de-mini-poivrons-au-sel-de-guerande-le-guerandais.jpg");
 		Ideaz.add(id1);
 		Idea id2 = new Idea("Space Travel", "Time for some space shit",
@@ -39,8 +39,8 @@ public class IdeaServiceImpl implements IdeaService {
 		Idea id3 = new Idea("Drone Flight", "Let's Get Droned",
 				"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEe5s0bFg0kiHsZgI-4UPsGFzdBVDBm9ZdqKKdcknDNnZbo2VgTwXZE8HOaUr7xIYysX0&usqp=CAU");
 		Ideaz.add(id3);
-		Idea id4 = new Idea("Blonde Big Boobs", "Triple B Baby",
-				"https://img-9gag-fun.9cache.com/photo/aAbGoBL_700b.jpg");
+		Idea id4 = new Idea("Green City", "Make your city green again !",
+				"https://ychef.files.bbci.co.uk/976x549/p00s19zw.jpg");
 		Ideaz.add(id4);
 
 		for (Idea id : Ideaz) {

@@ -2,7 +2,6 @@ package fr.epsi.service;
 
 import java.util.List;
 
-import fr.epsi.entity.Idea;
 import fr.epsi.entity.User;
 
 public interface UserService {
@@ -12,6 +11,7 @@ public interface UserService {
 	public List<User> getValidatedUsers();
 	public List<User> getNotValidatedUsers();
 	public List<User> getDeactivatedUsers();
+	public Long getNbrIdeaCreated(User u);
 	public void createUser(User u);
 	public List<User> getBrainsIdeas();
 	public void deleteUser(User u);

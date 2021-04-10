@@ -10,6 +10,7 @@ public interface UserRepository {
 	public void createUser(User u);
 	public void deleteUser(User u);
 	public void updateUser(User u);
+	public Long getNbrIdeaCreated(User u);
 	public List<User> getAllUsers();
 	public List<User> getNotValidatedUsers();
 	public List<User> getValidatedUsers();

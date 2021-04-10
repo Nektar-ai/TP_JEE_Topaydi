@@ -22,9 +22,7 @@
 </head>
 <body>
  	<%@include file="commons/menu.jsp"%>
-	<div class="w-full bg-gray-50 flex flex-col min-h-full">
-		
-		
+	<div class="w-full bg-gray-50 flex flex-col min-h-full">				
 		<div class="flex w-full justify-center py-5">
 		  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 lg:w-1/2 md:w-2/3 sm:w-4/5">
 		    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -46,11 +44,8 @@
 		              </th>
 		            </tr>
 		          </thead>
-		          <tbody class="bg-white divide-y divide-gray-200">
-		           
-		            
-		            <c:forEach var="User" items="${listUsers}">
-			
+		          <tbody class="bg-white divide-y divide-gray-200">		           		           
+		            <c:forEach var="User" items="${listUsers}">			
 						<tr>
 							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${User.nickname}</td>
 							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${User.mail}</td>
@@ -59,12 +54,9 @@
 									<input type="hidden" value="${User.nickname}" name="nickname"/>
 									<button type="submit" value="Valider" name="validate" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Valider</button>					
 								</form>
-							</td>				
-							
-						</tr>
-			
-					</c:forEach>
-		
+							</td>											
+						</tr>			
+					</c:forEach>		
 		          </tbody>
 		        </table>
 		        <div class="w-full flex mt-3 mb-2">
@@ -84,11 +76,8 @@
 		              </th>
 		            </tr>
 		          </thead>
-		          <tbody class="bg-white divide-y divide-gray-200">
-		           
-		            
-		            <c:forEach var="UserD" items="${listDeacUsers}">
-			
+		          <tbody class="bg-white divide-y divide-gray-200">		           		          
+		            <c:forEach var="UserD" items="${listDeacUsers}">			
 						<tr>
 							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${UserD.nickname}</td>
 							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${UserD.mail}</td>
@@ -96,13 +85,10 @@
 								<form action="admin" method="post" class="mx-2">					
 									<input type="hidden" value="${UserD.getNickname()}" id="nickname" name="nickname"/>
 									<button type="submit" value="activate" name="activate" class="h-full inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Activer</button>					
-								</form>
-								
+								</form>								
 							</td>					
-						</tr>
-			
-					</c:forEach>
-		
+						</tr>			
+					</c:forEach>		
 		          </tbody>
 		        </table>
 		        <div class="w-full flex mt-3 mb-2">
@@ -122,11 +108,8 @@
 		              </th>
 		            </tr>
 		          </thead>
-		          <tbody class="bg-white divide-y divide-gray-200">
-		           
-		            
+		          <tbody class="bg-white divide-y divide-gray-200">		               
 		            <c:forEach var="UserV" items="${listValUsers}">
-			
 						<tr>
 							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${UserV.nickname}</td>
 							<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${UserV.mail}</td>
@@ -142,9 +125,7 @@
 								</form>
 							</td>					
 						</tr>
-			
 					</c:forEach>
-		
 		          </tbody>
 		        </table>
 		      </div>
@@ -152,10 +133,6 @@
 		  </div>
 		</div>
 	</div>
-           			
-    
-
 	<%@include file="commons/footer.jsp"%> 
 </body>
-
 </html>

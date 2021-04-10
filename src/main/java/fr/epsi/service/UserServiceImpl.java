@@ -79,4 +79,9 @@ public class UserServiceImpl implements UserService {
 		users = dao.getDeactivatedUsers();
 		return users;
 	}
+	
+	public Long getNbrIdeaCreated(User u)
+	{
+		return dao.getNbrIdeaCreated(u);
+	}
 }

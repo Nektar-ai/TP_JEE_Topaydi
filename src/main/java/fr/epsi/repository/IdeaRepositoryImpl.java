@@ -1,11 +1,8 @@
 package fr.epsi.repository;
 
 import fr.epsi.entity.Idea;
-import fr.epsi.entity.User;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -29,14 +26,6 @@ public class IdeaRepositoryImpl implements IdeaRepository {
 		ideaz = (List<Idea>) em.createQuery("SELECT i FROM Idea i ORDER BY i.tops DESC", Idea.class).getResultList();
 		return ideaz;
 	}
-	
-//	public List<Idea> getBuzzIdeas() {
-//		List<Idea> ideaz = new ArrayList<Idea>();
-//		ideaz = (List<Idea>) em.createQuery("SELECT i, SUM(i.tops+i.flops) AS buzz FROM "
-//				+ "(SELECT DISTINCT i FROM Idea)"
-//				+ "GROUP BY i.id ORDER BY buzz DESC", Idea.class).getResultList();
-//		return ideaz;
-//	}
 
 	public List<Idea> getBuzzIdeas() {
 		List<Idea> ideaz = new ArrayList<Idea>();

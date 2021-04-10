@@ -29,12 +29,6 @@ public class User {
 	
 	@ManyToMany(mappedBy="users")
 	private List<Idea> idea;
-
-//	@ElementCollection(targetClass = Roles.class)
-//	@JoinTable(name = "RolesTable", joinColumns = @JoinColumn(name = "user_id"))
-//	@Column(name = "roles", nullable = false)
-//	@Enumerated(EnumType.STRING)
-//	Collection<Roles> roles;
 	
 	public User() {}
 	

@@ -28,10 +28,7 @@ public class LoginServlet extends HttpServlet {
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-//    	User u = new User(req.getParameter("nickname"), req.getParameter("password"));
     	User uDB = service.getUserByName(req.getParameter("nickname"));
-//    	System.out.println("User JSP Password : "+u.getPassword());
-//    	System.out.println("User Database Password : "+uDB.getPassword());
     	
     	if (uDB.getNickname() == null)
     	{
@@ -43,11 +40,8 @@ public class LoginServlet extends HttpServlet {
     		if (uDB.isAdmin() == true)
     		{
     			resp.sendRedirect(req.getContextPath() + "/admin");
-//    			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/AdminUserValidation.jsp");
-//            	dispatcher.forward(req, resp);
     		}
-        	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/Home.jsp");
-        	dispatcher.forward(req, resp);
+    		resp.sendRedirect(req.getContextPath() + "/home");
     	} else {
     		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/ErrorLogin.jsp");
         	dispatcher.forward(req, resp);

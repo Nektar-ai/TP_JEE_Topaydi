@@ -24,7 +24,7 @@
 	 	<%@include file="commons/menu.jsp"%>
 	
            		<br><br><br><br><br><br>
-       		  	<h2 style = "textcolor: red"> ERROR LOGIN </h2>
+      <h2 style = "textcolor: red"> ERROR LOGIN </h2>
            		<br><br><br><br><br><br>
 	
 		<%@include file="commons/footer.jsp"%> 

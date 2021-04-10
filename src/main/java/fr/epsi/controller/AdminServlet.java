@@ -2,9 +2,7 @@ package fr.epsi.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.ejb.EJB;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,8 +40,6 @@ public class AdminServlet extends HttpServlet{
         } else if (req.getParameter("deactivate") != null) {
         	User u = service.getUserByName((String)req.getParameter("nickname"));
         	u.setActive(false);
-//        	System.out.println("USER JSP : "+req.getParameter("nickname"));
-//        	System.out.println("USER CREATED CONTROLLER : "+u.getNickname());
         	service.updateUser(u);
         	doGet(req, resp);
         } else if (req.getParameter("delete") != null) {
@@ -56,9 +52,8 @@ public class AdminServlet extends HttpServlet{
         	service.updateUser(u);
             doGet(req, resp); 
         } else {        	
-            System.out.println("T'as foire mate");
+            System.out.println("Error..");
         }
-
     	this.getServletContext().getRequestDispatcher("/WEB-INF/pages/Login.jsp").forward(req, resp);
 	}
 }

@@ -2,7 +2,6 @@ package fr.epsi.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,7 +29,6 @@ public class IdeasServlet extends HttpServlet {
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
-//        String action = req.getParameter("action");
         if (req.getParameter("newidea") != null) {
         	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/pages/NewIdea.jsp");
         	dispatcher.forward(req, resp);
@@ -39,7 +37,7 @@ public class IdeasServlet extends HttpServlet {
         	service.createDummyIdea();
         	doGet(req, resp);
         } else {
-            System.out.println("T'as foire mate");
+            System.out.println("Error..");
         }
 	}
 }

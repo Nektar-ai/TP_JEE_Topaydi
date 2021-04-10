@@ -2,7 +2,6 @@ package fr.epsi.repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -11,7 +10,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 
-import fr.epsi.entity.Idea;
 import fr.epsi.entity.User;
 
 @Stateless
@@ -37,16 +35,17 @@ public class UserRepositoryImpl implements UserRepository {
 		return u;
 	}
 	
-//	public List<User> getBrainsIdeas() {
-//		List<User> userz = new ArrayList<User>();
-//		userz = (List<User>) em.createQuery("SELECT count(u) FROM User u ORDER BY  DESC", User.class).getResultList();
-//		return userz;
-//	}
-
 	public List<User> getBrainsIdeas() {
 		List<User> userz = new ArrayList<User>();
 		userz = (List<User>) em.createQuery("SELECT u FROM User u LEFT JOIN Idea i ON u.id = i.user GROUP BY u.id ORDER BY COUNT(i.user) DESC", User.class).getResultList();
 		return userz;
+	}
+	
+	public Long getNbrIdeaCreated(User u)
+	{
+		Long nb;
+		nb = em.createQuery("SELECT COUNT(i.user) FROM Idea i WHERE i.user = "+u.getId(), Long.class).getSingleResult();
+		return nb;
 	}
 	
 	public void createUser(User u) 
@@ -56,7 +55,7 @@ public class UserRepositoryImpl implements UserRepository {
 			em.merge(u);
 			utx.commit();
 		} catch (Exception e) {
-			// TODO
+			e.printStackTrace();
 		}
 	}
 	
@@ -67,7 +66,7 @@ public class UserRepositoryImpl implements UserRepository {
 			em.remove(u);
 			utx.commit();
 		} catch (Exception e) {
-			// TODO
+			e.printStackTrace();
 		}
 	}
 	
@@ -78,7 +77,7 @@ public class UserRepositoryImpl implements UserRepository {
 			em.merge(u);
 			utx.commit();
 		} catch (Exception e) {
-			// TODO
+			e.printStackTrace();
 		}
 	}
 	public List<User> getAllUsers()

@@ -22,11 +22,11 @@ public class AddVoteServlet extends HttpServlet {
             throws ServletException, IOException
     {
     	Long id = Long.parseLong(req.getParameter("id"));
-    	
-        if("Top".equals(req.getParameter("top"))){
+
+        if("top".equals(req.getParameter("top"))){
             service.topVote(id);
         }
-        else if("Flop".equals(req.getParameter("flop"))){
+        else if("flop".equals(req.getParameter("flop"))){
             service.flopVote(id);
         }
         

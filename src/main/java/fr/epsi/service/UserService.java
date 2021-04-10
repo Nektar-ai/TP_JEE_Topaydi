@@ -11,7 +11,10 @@ public interface UserService {
 	public List<User> getAllUsers();
 	public List<User> getValidatedUsers();
 	public List<User> getNotValidatedUsers();
+	public List<User> getDeactivatedUsers();
 	public void createUser(User u);
 	public List<User> getBrainsIdeas();
+	public void deleteUser(User u);
+	public void updateUser(User u);
 	
 }
